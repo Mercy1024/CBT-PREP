@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./heroLogo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBT PREPS - Excel in Your Exams</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-image: url("./CBTpREPS.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+      }
+
+      .logo {
+        max-width: 70px;
+      }
+
+      .logo img {
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-login {
+        background: white;
+        color: rgba(17, 24, 39, 1);
+      }
+
+      .btn-login:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-register {
+        background: rgba(17, 24, 39, 1);
+        color: white;
+      }
+
+      .btn-register:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Main Content */
+      .main-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .content-left {
+        flex: 1;
+        max-width: 700px;
+        color: white;
+      }
+
+      .main-title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .features {
+        margin-bottom: 40px;
+      }
+
+      .features h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        background: transparent;
+        color: rgb(131, 129, 129);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .cta-section {
+        margin-bottom: 40px;
+      }
+
+      .cta-text {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .steps {
+        list-style: none;
+      }
+
+      .steps li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      .steps li::before {
+        content: "✓";
+        counter-increment: step-counter;
+        background: rgba(38, 112, 183, 1);
+        color: black;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+
+      .steps {
+        counter-reset: step-counter;
+      }
+
+      .content-right {
+        flex: 1;
+        display: flex;
+        max-width: 520px;
+      }
+
+      .hero-image {
+        width: 100%;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header {
+          padding: 15px 20px;
+        }
+
+        .main-content {
+          flex-direction: column-reverse;
+          padding: 40px 20px;
+          text-align: center;
+          gap: 2rem;
+          padding-top: 0rem;
+          margin-top: 0rem;
+        }
+
+        .content-right {
+          padding-left: 0;
+          margin-top: 40px;
+        }
+
+        .feature-list {
+          text-align: left;
+        }
+
+        .main-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-image {
+          width: 300px;
+          height: 300px;
+        }
+
+        .auth-buttons {
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .hero-image {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <img src="./heroLogo.png" alt="CBTPREPS Logo" />
+      </div>
+      <div class="auth-buttons">
+        <a href="#" class="btn btn-login">Login</a>
+        <a href="#" class="btn btn-register">Register Now</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-left">
+        <h1 class="main-title">Welcome To CBT PREPS</h1>
+        <p class="subtitle">
+          Excel in WAEC, NECO, JAMB, Post-UTME & more with our realistic CBT
+          practice tests and high-quality mock exams
+        </p>
+
+        <div class="features">
+          <h3>Why Choose Us?</h3>
+          <ul class="feature-list">
+            <li>Exam-style simulations</li>
+            <li>Instant scoring & detailed feedback</li>
+            <li>Affordable, flexible access</li>
+          </ul>
+        </div>
+
+        <div class="cta-section">
+          <p class="cta-text">
+            Start Practicing Now - Boost your scores and secure your success!
+          </p>
+          <ol class="steps">
+            <li>Sign up</li>
+            <li>Practice</li>
+            <li>Excel</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="content-right">
+        <div class="hero-image">
+          <img src="./HEROIMAGE.png" alt="Students taking CBT exam" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
